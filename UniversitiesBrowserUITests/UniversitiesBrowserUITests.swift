@@ -2,7 +2,7 @@
 //  UniversitiesBrowserUITests.swift
 //  UniversitiesBrowserUITests
 //
-//  Created by Salma Ashour, Vodafone on 11/06/2026.
+//  Created by Salma Ashour on 11/06/2026.
 //
 
 import XCTest
