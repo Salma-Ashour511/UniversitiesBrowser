@@ -2,7 +2,7 @@
 //  University.swift
 //  University
 //
-//  Created by Salma Ashour, Vodafone on 11/06/2026.
+//  Created by Salma Ashour on 11/06/2026.
 //
 
 import Foundation
@@ -14,20 +14,20 @@ import Foundation
 /// and the data layer maps both network DTOs and persisted records to/from it.
 ///
 public struct University: Identifiable, Equatable, Sendable {
-    public let id: String
     public let name: String
     public let country: String
     public let stateProvince: String?
     public let webPages: [String]
+    public var id: String {
+        "\(country)-\(name)"
+    }
     
     public init(
-        id: String,
         name: String,
         country: String,
         stateProvince: String?,
         webPages: [String]
     ) {
-        self.id = id
         self.name = name
         self.country = country
         self.stateProvince = stateProvince
