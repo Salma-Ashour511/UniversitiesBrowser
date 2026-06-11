@@ -11,7 +11,6 @@ import SwiftUI
 struct UniversitiesBrowserApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
         }
     }
 }

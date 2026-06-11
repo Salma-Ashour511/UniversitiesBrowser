@@ -195,6 +195,14 @@
 			);
 			mainGroup = 882E3D0F2FDA101000506904;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				882E54362FDB214600506904 /* XCLocalSwiftPackageReference "Packages/PersistenceKit" */,
+				882E545B2FDB22C200506904 /* XCLocalSwiftPackageReference "Packages/CommonUI" */,
+				882E54632FDB22E000506904 /* XCLocalSwiftPackageReference "Packages/NetworkKit" */,
+				882E54642FDB230500506904 /* XCLocalSwiftPackageReference "Packages/DomainKit" */,
+				882E54652FDB231700506904 /* XCLocalSwiftPackageReference "Packages/ListingFeature" */,
+				882E54662FDB232900506904 /* XCLocalSwiftPackageReference "Packages/DetailsFeature" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 882E3D192FDA101000506904 /* Products */;
 			projectDirPath = "";
@@ -570,6 +578,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		882E54362FDB214600506904 /* XCLocalSwiftPackageReference "Packages/PersistenceKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/PersistenceKit;
+		};
+		882E545B2FDB22C200506904 /* XCLocalSwiftPackageReference "Packages/CommonUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/CommonUI;
+		};
+		882E54632FDB22E000506904 /* XCLocalSwiftPackageReference "Packages/NetworkKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/NetworkKit;
+		};
+		882E54642FDB230500506904 /* XCLocalSwiftPackageReference "Packages/DomainKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DomainKit;
+		};
+		882E54652FDB231700506904 /* XCLocalSwiftPackageReference "Packages/ListingFeature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/ListingFeature;
+		};
+		882E54662FDB232900506904 /* XCLocalSwiftPackageReference "Packages/DetailsFeature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DetailsFeature;
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 882E3D102FDA101000506904 /* Project object */;
 }
