@@ -5,27 +5,38 @@ import PackageDescription
 
 let package = Package(
     name: "PersistenceKit",
-    platforms: [.iOS("15.1")],
+    platforms: [.iOS(
+        "15.1"
+    )],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "PersistenceKit",
             targets: ["PersistenceKit"]
-        ),
+        )
     ],
     dependencies: [
-        .package(path: "../DomainKit")
+        .package(
+            path: "../DomainKit"
+        ),
+        .package(
+            url: "https://github.com/groue/GRDB.swift.git",
+            from: "7.7.1"
+        )
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PersistenceKit",
-            dependencies: ["DomainKit"]
+            dependencies: [
+                "DomainKit",
+                .product(
+                    name: "GRDB",
+                    package: "GRDB.swift"
+                )
+            ]
         ),
         .testTarget(
             name: "PersistenceKitTests",
             dependencies: ["PersistenceKit"]
-        ),
+        )
     ]
 )

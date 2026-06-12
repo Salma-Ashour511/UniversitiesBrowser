@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		88276BB52FDC4C46003AA9DF /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BB42FDC4C46003AA9DF /* NetworkKit */; };
+		88276BB72FDC4C7D003AA9DF /* PersistenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BB62FDC4C7D003AA9DF /* PersistenceKit */; };
+		88276BB92FDC4C82003AA9DF /* CommonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BB82FDC4C82003AA9DF /* CommonUI */; };
+		88276BBB2FDC4C87003AA9DF /* DomainKit in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BBA2FDC4C87003AA9DF /* DomainKit */; };
+		88276BBD2FDC4C8B003AA9DF /* ListingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BBC2FDC4C8B003AA9DF /* ListingFeature */; };
+		88276BBF2FDC4C8F003AA9DF /* DetailsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 88276BBE2FDC4C8F003AA9DF /* DetailsFeature */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		882E3D262FDA101C00506904 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +61,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88276BBF2FDC4C8F003AA9DF /* DetailsFeature in Frameworks */,
+				88276BB92FDC4C82003AA9DF /* CommonUI in Frameworks */,
+				88276BBD2FDC4C8B003AA9DF /* ListingFeature in Frameworks */,
+				88276BBB2FDC4C87003AA9DF /* DomainKit in Frameworks */,
+				88276BB52FDC4C46003AA9DF /* NetworkKit in Frameworks */,
+				88276BB72FDC4C7D003AA9DF /* PersistenceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +87,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88276BB32FDC4C46003AA9DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		882E3D0F2FDA101000506904 = {
 			isa = PBXGroup;
 			children = (
 				882E3D1A2FDA101000506904 /* UniversitiesBrowser */,
 				882E3D282FDA101C00506904 /* UniversitiesBrowserTests */,
 				882E3D322FDA101C00506904 /* UniversitiesBrowserUITests */,
+				88276BB32FDC4C46003AA9DF /* Frameworks */,
 				882E3D192FDA101000506904 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +135,12 @@
 			);
 			name = UniversitiesBrowser;
 			packageProductDependencies = (
+				88276BB42FDC4C46003AA9DF /* NetworkKit */,
+				88276BB62FDC4C7D003AA9DF /* PersistenceKit */,
+				88276BB82FDC4C82003AA9DF /* CommonUI */,
+				88276BBA2FDC4C87003AA9DF /* DomainKit */,
+				88276BBC2FDC4C8B003AA9DF /* ListingFeature */,
+				88276BBE2FDC4C8F003AA9DF /* DetailsFeature */,
 			);
 			productName = UniversitiesBrowser;
 			productReference = 882E3D182FDA101000506904 /* UniversitiesBrowser.app */;
@@ -605,6 +634,39 @@
 			relativePath = Packages/DetailsFeature;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88276BB42FDC4C46003AA9DF /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E54632FDB22E000506904 /* XCLocalSwiftPackageReference "Packages/NetworkKit" */;
+			productName = NetworkKit;
+		};
+		88276BB62FDC4C7D003AA9DF /* PersistenceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E54362FDB214600506904 /* XCLocalSwiftPackageReference "Packages/PersistenceKit" */;
+			productName = PersistenceKit;
+		};
+		88276BB82FDC4C82003AA9DF /* CommonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E545B2FDB22C200506904 /* XCLocalSwiftPackageReference "Packages/CommonUI" */;
+			productName = CommonUI;
+		};
+		88276BBA2FDC4C87003AA9DF /* DomainKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E54642FDB230500506904 /* XCLocalSwiftPackageReference "Packages/DomainKit" */;
+			productName = DomainKit;
+		};
+		88276BBC2FDC4C8B003AA9DF /* ListingFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E54652FDB231700506904 /* XCLocalSwiftPackageReference "Packages/ListingFeature" */;
+			productName = ListingFeature;
+		};
+		88276BBE2FDC4C8F003AA9DF /* DetailsFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 882E54662FDB232900506904 /* XCLocalSwiftPackageReference "Packages/DetailsFeature" */;
+			productName = DetailsFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 882E3D102FDA101000506904 /* Project object */;
 }

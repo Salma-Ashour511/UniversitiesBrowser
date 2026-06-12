@@ -22,7 +22,6 @@ public struct UniversityDTO: Decodable, Sendable {
 
     public func toDomain() -> University {
         University(
-            id: name + "-" + country,
             name: name,
             country: country,
             stateProvince: stateProvince,

@@ -23,6 +23,6 @@ public final class ListingInteractor: ListingInteractorInput {
     }
 
     public func loadUniversities() async throws -> [University] {
-        try await repository.fetchUniversities()
+        try await repository.universities(country: country)
     }
 }
