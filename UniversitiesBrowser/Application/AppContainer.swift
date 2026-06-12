@@ -29,7 +29,7 @@ final class AppContainer {
             navigationController: navigationController,
             repository: repository,
             detailsBuilder: { university in
-                UIViewController() // temporary placeholder
+                DetailsBuilder.build(university: university)
             }
         )
 
