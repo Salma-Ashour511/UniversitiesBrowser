@@ -44,7 +44,7 @@ public final class ListingPresenter: ObservableObject {
                 let universities = try await interactor.loadUniversities()
                 state = universities.isEmpty ? .empty : .loaded(universities)
             } catch {
-                state = .error("Unable to load universities. Please try again.")
+                state = .error(error.localizedDescription)
             }
         }
     }
