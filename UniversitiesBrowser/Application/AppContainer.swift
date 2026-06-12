@@ -14,6 +14,7 @@ import DetailsFeature
 
 final class AppContainer {
     private let navigationController = UINavigationController()
+    let refreshService = UniversitiesRefreshServiceImpl()
 
     func makeRootViewController() -> UIViewController {
         let apiClient = URLSessionAPIClient()
@@ -28,11 +29,15 @@ final class AppContainer {
         let listingViewController = ListingBuilder.build(
             navigationController: navigationController,
             repository: repository,
+            refreshService: refreshService,
             detailsBuilder: { university in
-                DetailsBuilder.build(university: university)
+                DetailsBuilder.build(
+                    university: university,
+                    refreshService: self.refreshService
+                )
             }
         )
-
+        
         navigationController.setViewControllers(
             [listingViewController],
             animated: false

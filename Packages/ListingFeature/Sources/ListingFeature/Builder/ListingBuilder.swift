@@ -11,6 +11,7 @@ public enum ListingBuilder {
     @MainActor public static func build(
         navigationController: UINavigationController,
         repository: UniversitiesRepository,
+        refreshService: UniversitiesRefreshService,
         detailsBuilder: @escaping (University) -> UIViewController
     ) -> UIViewController {
         let interactor = ListingInteractor(repository: repository)
@@ -20,7 +21,8 @@ public enum ListingBuilder {
         )
         let presenter = ListingPresenter(
             interactor: interactor,
-            router: router
+            router: router,
+            refreshService: refreshService
         )
 
         return ListingViewController(presenter: presenter)

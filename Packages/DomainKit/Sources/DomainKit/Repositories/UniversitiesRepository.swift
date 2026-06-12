@@ -11,8 +11,5 @@ public protocol UniversitiesRepository: Sendable {
     func universities(
         country: String
     ) async throws -> [University]
-    
-    func refresh(
-        country: String
-    ) async throws -> [University]
+
 }

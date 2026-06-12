@@ -14,13 +14,22 @@ public final class ListingPresenter: ObservableObject {
 
     private let interactor: ListingInteractorInput
     private let router: ListingRouterInput
+    private let refreshService: UniversitiesRefreshService
 
     public init(
         interactor: ListingInteractorInput,
-        router: ListingRouterInput
+        router: ListingRouterInput,
+        refreshService: UniversitiesRefreshService
     ) {
+
         self.interactor = interactor
         self.router = router
+        self.refreshService = refreshService
+
+        refreshService.onRefreshRequested = { [weak self] in
+            self?.retry()
+        }
+
     }
 
     public func onAppear() {

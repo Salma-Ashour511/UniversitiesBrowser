@@ -25,6 +25,13 @@ public final class DetailsViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Refresh",
+            style: .plain,
+            target: self,
+            action: #selector(refreshTapped)
+        )
 
         let hostingController = UIHostingController(
             rootView: DetailsView(presenter: presenter)
@@ -43,5 +50,10 @@ public final class DetailsViewController: UIViewController {
         ])
 
         hostingController.didMove(toParent: self)
+    }
+    
+    @objc
+    private func refreshTapped() {
+        presenter.refresh()
     }
 }

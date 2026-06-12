@@ -15,14 +15,24 @@ public final class DetailsPresenter: ObservableObject {
 
     private let interactor: DetailsInteractorInput
     private let router: DetailsRouterInput
+    private let refreshService: UniversitiesRefreshService
 
     public init(
         university: University,
         interactor: DetailsInteractorInput,
-        router: DetailsRouterInput
+        router: DetailsRouterInput,
+        refreshService: UniversitiesRefreshService
+
     ) {
         self.university = university
         self.interactor = interactor
         self.router = router
+        self.refreshService = refreshService
+    }
+    
+    func refresh() {
+
+        refreshService.refresh()
+
     }
 }

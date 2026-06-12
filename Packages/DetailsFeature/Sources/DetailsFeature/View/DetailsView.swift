@@ -48,6 +48,11 @@ public struct DetailsView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
+        .toolbar {
+            Button("Refresh") {
+                presenter.refresh()
+            }
+        }
     }
 
     private func infoRow(title: String, value: String) -> some View {

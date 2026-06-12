@@ -10,7 +10,6 @@ import NetworkKit
 import PersistenceKit
 
 final class UniversitiesRepositoryImpl: UniversitiesRepository {
-    
     private let apiClient: APIClient
     private let cache: UniversitiesCache
 
@@ -41,9 +40,4 @@ final class UniversitiesRepositoryImpl: UniversitiesRepository {
             return cachedUniversities
         }
     }
-    
-    func refresh(country: String) async throws -> [DomainKit.University] {
-        return []
-    }
-    
 }
