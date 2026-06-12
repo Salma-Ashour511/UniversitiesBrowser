@@ -19,6 +19,15 @@ public struct DetailsView: View {
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
+                if presenter.isRefreshing {
+                    HStack(spacing: 8) {
+                        ProgressView()
+                        Text("Refreshing...")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
                 Text(presenter.university.name)
                     .font(.title2)
                     .fontWeight(.bold)

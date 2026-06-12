@@ -27,7 +27,9 @@ public final class ListingPresenter: ObservableObject {
         self.refreshService = refreshService
 
         refreshService.onRefreshRequested = { [weak self] in
-            self?.retry()
+            Task { @MainActor in
+                self?.retry()
+            }
         }
 
     }
@@ -38,6 +40,7 @@ public final class ListingPresenter: ObservableObject {
     }
 
     public func retry() {
+        print("ListingPresenter retry triggered")
         load()
     }
 
