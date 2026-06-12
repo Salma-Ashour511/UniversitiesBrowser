@@ -40,7 +40,6 @@ public final class ListingPresenter: ObservableObject {
     }
 
     public func retry() {
-        print("ListingPresenter retry triggered")
         load()
     }
 

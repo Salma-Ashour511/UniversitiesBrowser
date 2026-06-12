@@ -18,14 +18,23 @@ final class AppContainer {
 
     func makeRootViewController() -> UIViewController {
         let apiClient = URLSessionAPIClient()
-        let databaseManager = try! DatabaseManager()
-        let cache = GRDBUniversitiesCache(databaseManager: databaseManager)
-
+        let databaseManager: DatabaseManager
+        do {
+            databaseManager = try DatabaseManager()
+        } catch {
+            fatalError(
+                "Failed to initialize database: \(error)"
+            )
+        }
+        let cache = GRDBUniversitiesCache(
+            databaseManager: databaseManager
+        )
+        
         let repository = UniversitiesRepositoryImpl(
             apiClient: apiClient,
             cache: cache
         )
-
+        
         let listingViewController = ListingBuilder.build(
             navigationController: navigationController,
             repository: repository,

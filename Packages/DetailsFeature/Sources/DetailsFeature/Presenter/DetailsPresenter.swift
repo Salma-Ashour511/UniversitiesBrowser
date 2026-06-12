@@ -2,7 +2,7 @@
 //  DetailsPresenter.swift
 //  DetailsFeature
 //
-//  Created by Salma Ashour, Vodafone on 12/06/2026.
+//  Created by Salma Ashour on 12/06/2026.
 //
 
 
@@ -13,6 +13,7 @@ import DomainKit
 public final class DetailsPresenter: ObservableObject {
     @Published public private(set) var university: University
     @Published public private(set) var isRefreshing = false
+    @Published public private(set) var refreshMessage: String?
 
     private let interactor: DetailsInteractorInput
     private let router: DetailsRouterInput
@@ -31,13 +32,14 @@ public final class DetailsPresenter: ObservableObject {
     }
 
     public func refresh() {
-        print("Details refresh tapped")
         isRefreshing = true
+        refreshMessage = nil
 
         refreshService.refresh()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.isRefreshing = false
+            self.refreshMessage = "Refresh completed"
         }
     }
 }

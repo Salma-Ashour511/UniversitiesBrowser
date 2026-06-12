@@ -2,7 +2,7 @@
 //  DetailsView.swift
 //  DetailsFeature
 //
-//  Created by Salma Ashour, Vodafone on 12/06/2026.
+//  Created by Salma Ashour on 12/06/2026.
 //
 
 
@@ -26,6 +26,12 @@ public struct DetailsView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
+                }
+                
+                if let refreshMessage = presenter.refreshMessage {
+                    Text(refreshMessage)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
                 
                 Text(presenter.university.name)
