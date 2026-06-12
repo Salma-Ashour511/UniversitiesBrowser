@@ -19,6 +19,18 @@ public struct UniversityDTO: Decodable, Sendable {
         case stateProvince = "state-province"
         case webPages = "web_pages"
     }
+    
+    public init(
+        name: String,
+        country: String,
+        stateProvince: String?,
+        webPages: [String]
+    ) {
+        self.name = name
+        self.country = country
+        self.stateProvince = stateProvince
+        self.webPages = webPages
+    }
 
     public func toDomain() -> University {
         University(
