@@ -39,7 +39,7 @@ public final class DetailsPresenter: ObservableObject {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.isRefreshing = false
-            self.refreshMessage = "Refresh completed"
+            self.refreshMessage = nil
         }
     }
 }

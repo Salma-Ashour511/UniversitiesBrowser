@@ -44,25 +44,80 @@ public struct ListingView: View {
             )
 
         case .loaded(let universities):
-            List(universities) { university in
-                Button {
-                    presenter.didSelect(university)
-                } label: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(university.name)
-                            .font(.headline)
-                            .foregroundStyle(.primary)
-                            .fixedSize(horizontal: false, vertical: true)
+            ZStack {
+                Color(.systemGroupedBackground)
+                    .ignoresSafeArea()
 
-                        Text(university.country)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("Universities")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 12)
+
+                        LazyVStack(spacing: 0) {
+                            ForEach(universities) { university in
+                                Button {
+                                    presenter.didSelect(university)
+                                } label: {
+                                    UniversityCardRow(university: university)
+                                }
+                                .buttonStyle(.plain)
+
+                                if university.id != universities.last?.id {
+                                    Divider()
+                                        .padding(.leading, 116)
+                                }
+                            }
+                        }
+                        .background(Color(.systemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                        .padding(.horizontal, 20)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 6)
+                    .padding(.bottom, 24)
                 }
             }
-            .listStyle(.plain)
         }
+    }
+}
+
+private struct UniversityCardRow: View {
+    let university: University
+
+    var body: some View {
+        HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(.blue.opacity(0.15))
+                    .frame(width: 42, height: 42)
+
+                Image(systemName: "graduationcap.fill")
+                    .foregroundStyle(.blue)
+            }
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text(university.name)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Text(university.country)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(3)
+                    .multilineTextAlignment(.leading)
+            }
+
+            Spacer(minLength: 8)
+
+            Image(systemName: "chevron.right")
+                .font(.headline)
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+        .contentShape(Rectangle())
     }
 }

@@ -15,7 +15,7 @@ public final class DetailsViewController: UIViewController {
     public init(presenter: DetailsPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
-        title = "Details"
+        title = "University Details"
     }
 
     @available(*, unavailable)
@@ -27,7 +27,7 @@ public final class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Refresh",
+            image: UIImage(systemName: "arrow.clockwise"),
             style: .plain,
             target: self,
             action: #selector(refreshTapped)
